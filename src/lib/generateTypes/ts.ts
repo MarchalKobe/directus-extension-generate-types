@@ -59,7 +59,7 @@ function getType(field: Field, useIntersectionTypes = false) {
     if (["integer", "bigInteger", "float", "decimal"].includes(field.type))
       type = "number";
     else if (["boolean"].includes(field.type)) type = "boolean";
-    else if (["json", "csv"].includes(field.type)) type = "unknown";
+    else if (["json", "csv", "datetime"].includes(field.type)) type = field.type;
     else type = "string";
   }
   if (field.relation) {
